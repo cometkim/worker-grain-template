@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "worker-grain-template",
+  "version": "0.0.0",
+  "description": "A template for kick starting a Cloudflare Workers project with Grain",
+  "main": "index.js",
+  "scripts": {
+  },
+  "dependencies": {
+    "@wasmer/wasi": "^0.12.0"
+  },
+  "devDependencies": {
+    "@cloudflare/wrangler": "^1.12.3",
+    "copy-webpack-plugin": "^5.1.2",
+    "webpack": "^4.44.2"
+  }
+}

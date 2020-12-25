@@ -1,0 +1,5 @@
+/target
+/dist
+/*.wasm
+worker/
+node_modules/
