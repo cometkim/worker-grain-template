@@ -1,7 +1,7 @@
-name = ""
+name = "{{ project-name }}"
 type = "webpack"
 webpack_config = "webpack.config.js"
-account_id = ""
 workers_dev = true
+account_id = ""
 route = ""
 zone_id = ""

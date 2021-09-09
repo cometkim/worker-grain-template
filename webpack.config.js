@@ -5,9 +5,6 @@ const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'production';
-const bin = {
-  'stdlib-external/runtime': fs.readFileSync(path.resolve(__dirname, 'lib/stdlib-external/runtime.gr.wasm')),
-};
 let compile = 'ready';
 
 module.exports = {
@@ -15,12 +12,12 @@ module.exports = {
   context: path.resolve(__dirname, '.'),
   entry: [
     './lib/shims.js',
-    './index.js'
+    './index.js',
   ],
-  target: 'webworker',
   node: {
     fs: 'empty',
   },
+  target: 'webworker',
   plugins: [
     {
       apply: compiler => {
@@ -37,17 +34,7 @@ module.exports = {
         });
       },
     },
-    new webpack.ProvidePlugin({
-      wasiBindings: '@wasmer/wasi/lib/bindings/browser',
-    }),
-    new webpack.DefinePlugin({
-      __RUNTIME_BROWSER: JSON.stringify(true),
-      __RUNTIME_STDLIB_EXTERNAL: JSON.stringify(bin['stdlib-external/runtime'].toString('base64')),
-    }),
     new CopyPlugin([
-      // Note: Grain runner requires `stdlib-external/runtime` wasm module, But Wrangler only supports loading a single wasm asset.
-      // TODO: Need to figure out a way to link stdlib within the target module statically.
-      // Or, I think it probably can be done in this webpack configuration.
       { from: './main.gr.wasm', to: './worker/main.wasm' },
     ]),
   ],

@@ -1,6 +1,10 @@
 # Cloudflare workers with Grain
 
-WIP: A template for kick starting a Cloudflare worker with [Grain](https://grain-lang.org/)
+A template for kick starting a Cloudflare worker with [Grain](https://grain-lang.org/)
+
+## Requirements
+
+- Grain >= 0.4.0
 
 ## Wrangler
 
