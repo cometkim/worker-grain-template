@@ -9,6 +9,7 @@
     "wrangler": "wrangler"
   },
   "dependencies": {
+    "@grain/stdlib": "^0.4.1",
     "@wasmer/wasi": "^0.12.0",
     "@wasmer/wasmfs": "^0.12.0"
   },

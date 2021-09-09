@@ -24,12 +24,18 @@ module.exports = {
         compiler.hooks.compilation.tap('grain-compile', compilation => {
           if (compile !== 'ready') return;
 
-          const result = spawn('grain', ['compile', 'main.gr'], { stdio: 'inherit' });
+          const result = spawn('grain', [
+            'compile',
+            '--stdlib=node_modules/@grain/stdlib',
+            'main.gr',
+          ], { stdio: 'inherit' });
+
           if (result.status != 0) {
             compilation.errors.push('grain compile failed');
           } else {
             console.log('grain compile successfully');
           }
+
           compile = 'done';
         });
       },

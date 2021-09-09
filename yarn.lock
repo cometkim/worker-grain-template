@@ -11,6 +11,11 @@
     rimraf "^3.0.2"
     tar "^6.1.10"
 
+"@grain/stdlib@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@grain/stdlib/-/stdlib-0.4.1.tgz#0cd741b8c9a3c2296397a1288538b6cc81264d8f"
+  integrity sha512-Y3uyXJiuwI8kWR1VtV2MPHZDGlFdFhLbfWL9B73oV7ToAEUhxOvDtwW0edOUQN7Y2j2ddVKU+bJead73ds1OXA==
+
 "@wasmer/wasi@^0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@wasmer/wasi/-/wasi-0.12.0.tgz#89c7c5e5ba58f7dfae4e323359346639c4ec382a"
